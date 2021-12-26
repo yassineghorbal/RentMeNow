@@ -131,7 +131,7 @@ body {
   margin-bottom: 2em;
 }
 
-.message .send-message-cta {
+.message button {
   background-color: #005F73;
   color: white;
   font-weight: bold;
@@ -189,6 +189,12 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .navBar .logo {
+    color: white;
+    letter-spacing: 3px;
+    font-size: 15px;
+    margin-left: 0px;
+  }
   .navBar ul {
     display: none;
   }
