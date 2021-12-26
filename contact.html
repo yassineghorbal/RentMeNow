@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css-contact/contact.css">
     <title>RentMeNow</title>
+    
 </head>
 <body>
     <header class="navBar">  <!--Done-->
         <a class="logo" href="index.html">RentMe<span>Now</span></a>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Booking</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
             <li id="contact"><a href="#">Contact</a></li>
         </ul>
         <img id="mobile-cta" class="mobile-menu" src="images-contact/menu.svg" alt="open navigation">
@@ -32,16 +33,16 @@
                 <form>
                     <label for="fname">Full name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
-                    <label for="fnumber">Phone number:</label><br>
-                    <input type="text" id="fnumer" name="fnumber">
+                    <label for="place">Country/City:</label><br>
+                    <input type="text" id="place" name="place"><br>
                   </form> 
             </div>
             <div class="right-col">
                 <form>
                     <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email"><br>
-                    <label for="place">Country/City:</label><br>
-                    <input type="text" id="place" name="place">
+                    <input type="text" id="email" name="email">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
                   </form> 
             </div>
             
@@ -49,12 +50,11 @@
         <div class="message">
             <label for="message">Message:</label>
             <textarea name="message" id="message" cols="25" rows="5"></textarea>
-            <input type="submit" class="send-message-cta" value="Send message">
+            <button onclick="display()" id="send-message-cta">Send message</button>
         </div>
         
     </section>
     
-
     <footer>
         <div class="footer-section">
             <div class="footer-left">
@@ -72,5 +72,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function display(){
+        var name = document.getElementById("fname").value;
+        var place = document.getElementById("place").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+        alert("Name: "+name+"\n"+
+            "Country or City: "+place+"\n"+
+            "Email: "+email+"\n"+
+            "Subject: "+subject+"\n\n"+
+            "Message: "+message)
+        }
+    </script>
 </body>
 </html>
