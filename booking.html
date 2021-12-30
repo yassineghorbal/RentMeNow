@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-booking/booking.css">
+    <title>RentMeNow</title>
+</head>
+<body>
+    <header class="navBar">  <!--Done-->
+        <a class="logo" href="index.html">RentMe<span>Now</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li class="booking"><a href="#">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="dropdown">
+            <img class="dropbtn" src="images/menu.svg">
+            <div class="dropdown-content">
+              <a href="index.html">Home</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="#">Booking</a>
+              <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!--vehicule choice-->
+    <div class="vehicule-choice">
+        <h1>Vehicule type</h1>
+        <button class="choix" id="moto" onclick="choix(this.id)">motorcycle</button>
+        <button class="choix" id="citadine" onclick="choix(this.id)">city car</button>
+        <button class="choix" id="compact" onclick="choix(this.id)">compact car</button>
+        <button class="choix" id="berline" onclick="choix(this.id)">saloon car</button>
+        <button class="choix" id="utilitaire" onclick="choix(this.id)">utility car</button>
+        <button class="choix" id="truck" onclick="choix(this.id)">truck</button>
+        <button class="choix" id="cm" onclick="choix(this.id)">construction machine</button>
+    </div>
+
+    <!--fuel choice-->
+    <div>
+        <h1>Select the fuel type</h1>
+        <form class="fuel">
+            <div class="carburant">
+                <input type="radio" id="essence" name="radio" value="0.14" onclick="fuelP(this.value)">
+                <label for="essence">Essence</label>
+            </div>
+            <div class="carburant">
+                <input type="radio" id="diesel" name="radio" value="0.21" onclick="fuelP(this.value)">
+                <label for="diesel">Diesel</label>
+            </div>
+            <div class="carburant">
+                <input type="radio" id="electrique" name="radio" value="0.05" onclick="fuelP(this.value)">
+                <label for="electrique">Electrique</label>
+            </div>
+            <div class="carburant">
+                <input type="radio" id="hybride" name="radio" value="0.09" onclick="fuelP(this.value)">
+                <label for="hybride">Hybride</label>
+            </div>
+        </form>
+    </div>
+
+    <!--Gear box choice-->
+    <h1>Select the gear box type</h1>
+    <form class="gear-box">
+        <div class="gear" id="manual1">
+            <input type="radio" id="manual" name="gear" value="manual">
+            <label for="manual">Manual</label>
+        </div>
+        <div class="gear" id="automatic1">
+            <input type="radio" id="automatic" name="gear" value="automatic">
+            <label for="automatic">Automatic</label>
+        </div>
+    </form>
+
+    <h1>Reservation duration</h1>
+    <form class="duration">
+        <label for="date">Duration :</label>
+        <input type="number" min="1" id="date" name="date">
+      </form>
+      <div class="submit">
+        <input type="submit" name="" value="Submit" onclick="calc()" class="submit">
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="social-media">
+                
+                    <img src="images/facebookIcon.png" alt="facebook">
+                    <img src="images/instagram.png" alt="instagram">
+                    <img src="images/twitterIcon.png" alt="twitter">
+        
+            </div>
+            <div class="contact">
+                <p>Email: booking@rentmenow.ma<br>
+                    TEL: + 212 (0) 5 22 26 91 68 <br>
+                    Copyright © 2021 RentMeNow
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var type,
+        basePrice,
+        fuel,
+        tranPrice = 0,
+        total;
+
+        function choix(e) {
+            type = e;
+            var a = document.getElementsByName("radio");
+                for (var i = 0; i < a.length; i++) {
+                    a[i].disabled = true;
+                }
+
+            var b = document.getElementsByName("gear");
+                for (var i = 0; i < b.length; i++) {
+                    b[i].disabled = true;
+                }
+
+            switch (type) {
+                case "moto":
+                document.querySelector("#essence").disabled = false;
+                document.querySelector("#electrique").disabled = false;
+                basePrice = 10;
+                break;
+
+                case "compact":
+                document.querySelector("#manual").disabled = false;
+                document.querySelector("#manual").checked = true;
+                document.querySelector("#hybride").disabled = false;
+                document.querySelector("#essence").disabled = false;
+                document.querySelector("#diesel").disabled = false;
+                basePrice = 14;
+                break;
+
+                case "citadine":
+                document.querySelector("#manual").disabled = false;
+                document.querySelector("#manual").checked = true;
+                document.querySelector("#electrique").disabled = false;
+                document.querySelector("#hybride").disabled = false;
+                document.querySelector("#essence").disabled = false;
+                document.querySelector("#diesel").disabled = false;
+                basePrice = 12;
+                break;
+
+                case "utilitaire":
+                document.querySelector("#manual").disabled = false;
+                document.querySelector("#manual").checked = true;
+                document.querySelector("#diesel").disabled = false;
+                document.querySelector("#diesel").checked = true;
+                basePrice = 16;
+                break;
+
+                case "berline":
+                document.querySelector("#automatic").disabled = false;
+                document.querySelector("#automatic").checked = true;
+                document.querySelector("#hybride").disabled = false;
+                document.querySelector("#essence").disabled = false;
+                document.querySelector("#diesel").disabled = false;
+                basePrice = 20;
+                tranPrice = 0.19;
+                break;
+
+                case "truck":
+                document.querySelector("#automatic").disabled = false;
+                document.querySelector("#automatic").checked = true;
+                document.querySelector("#diesel").disabled = false;
+                document.querySelector("#diesel").checked = true;
+                basePrice = 250;
+                tranPrice = 0.19;
+                break;
+
+                case "cm":
+                document.querySelector("#manual").disabled = false;
+                document.querySelector("#manual").checked = true;
+                document.querySelector("#diesel").disabled = false;
+                document.querySelector("#essence").disabled = false;
+                basePrice = 900;
+                break;
+            }
+        }
+
+        /* fuel */
+        function fuelP(e) {
+            fuel = e;
+        }
+
+        /* calcul */
+        function calc() {
+            var days = document.querySelector("#date").value;
+            total = (basePrice + basePrice * fuel + basePrice * tranPrice) * days;
+            /*console.log("basePrice :", basePrice);
+            console.log("fuel :", fuel);
+            console.log("tranPrice :", tranPrice);*/
+
+            alert("Price: "+ total+ " Euros");
+        }
+    </script>
+</body>
+</html>
