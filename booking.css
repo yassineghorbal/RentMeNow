@@ -69,14 +69,14 @@ body {
 }
 
 .vehicule-choice {
-  width: 85%;
-  margin: 2em auto;
-}
-
-.vehicule-choice h1 {
-  text-align: center;
-  margin-bottom: .5em;
-  border-bottom: 2px solid salmon;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: 2px solid salmon;
 }
 
 .vehicule-choice .choix {
@@ -91,10 +91,11 @@ body {
 
 h1 {
   text-align: center;
+  margin-top: .5em;
 }
 
 .fuel {
-  width: 80%;
+  width: 70%;
   margin: .5em auto 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,12 +114,12 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
-  margin: .5em auto 1em;
+  width: 40%;
+  margin: auto;
 }
 
 .gear-box .gear {
-  margin: 0 .5em;
+  margin: auto;
 }
 
 .gear-box .gear label {
@@ -126,11 +127,8 @@ h1 {
 }
 
 .duration {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 70%;
-  margin: .5em auto 1em;
+  width: 25%;
+  margin: auto;
 }
 
 .submit {
@@ -224,6 +222,18 @@ h1 {
   }
   .navBar .dropdown:hover .dropbtn {
     color: #000;
+  }
+  .vehicule-choice {
+    width: 95%;
+  }
+  .fuel {
+    width: 90%;
+  }
+  .gear-box {
+    width: 60%;
+  }
+  .duration {
+    width: 60%;
   }
   .footer .social-media {
     margin: auto;
