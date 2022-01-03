@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="css-contact/contact.css">
     <title>RentMeNow</title>
     
 </head>
@@ -90,11 +90,18 @@
             var email = document.getElementById("email").value;
             var subject = document.getElementById("subject").value;
             var message = document.getElementById("message").value;
-            alert("Name: "+name+"\n"+
+
+            if(name == '' || place == '' || email == '' || subject == '' || message == ''){
+                alert("Please fill all empty fields!");
+            }
+
+            else{
+                alert("Name: "+name+"\n"+
                 "Country or City: "+place+"\n"+
                 "Email: "+email+"\n"+
                 "Subject: "+subject+"\n\n"+
                 "Message: "+message)
+            }
         }
 
         function reset(){
@@ -104,10 +111,9 @@
             document.getElementById("subject").value = '';
             document.getElementById("message").value = '';
         }
-        
-        function sent(){
-            alert("Your message was sent!")
-        }
+
+
+
         
     </script>
 </body>
