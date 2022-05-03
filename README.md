@@ -10,24 +10,24 @@
 
 ### The website contains the following pages:
 
-Home (representative for the website).
-Gallery (includes all of the agency's products).
-Reservation (contains a form for estimating the amount to be paid according to the criteria mentioned below)..
-Contact (contains a form that takes [name, email, subject, message] and displays a message with the details filled in).
+Home (representative for the website).<br />
+Gallery (includes all of the agency's products).<br />
+Reservation (contains a form for estimating the amount to be paid according to the criteria mentioned below)..<br />
+Contact (contains a form that takes [name, email, subject, message] and displays a message with the details filled in).<br />
 
 ### Reservation form criteria:
 
-type of vehicle: motorcycle, compact, city, utility, sedan/berlin, truck, construction machine.
-fuel: petrol, diesel, electric, hybrid.
-gearbox: manual, automatic.
-reservation duration (in days).
-calculate the price estimate according to the criteria provided.
+type of vehicle: motorcycle, compact, city, utility, sedan/berlin, truck, construction machine.<br />
+fuel: petrol, diesel, electric, hybrid.<br />
+gearbox: manual, automatic.<br />
+reservation duration (in days).<br />
+calculate the price estimate according to the criteria provided.<br />
 
 ### Instructions:
 
-Use Flex
-The design should be adaptable for mobile devices
-The website must comply with SEO standards
+Use Flex<br />
+The design should be adaptable for mobile devices<br />
+The website must comply with SEO standards<br />
 
 ### Temporality:
 
