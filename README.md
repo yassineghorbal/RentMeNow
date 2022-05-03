@@ -1,6 +1,6 @@
 # Car Rental Website
 
-### [Live Site] (https://myrental.netlify.app/)
+### [Live Site](https://myrental.netlify.app/)
 
 ![website preview](https://github.com/yassineghorbal/RentMeNow/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%202022-04-29%20093637.png?raw=true)
 
